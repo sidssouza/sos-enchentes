@@ -1,0 +1,169 @@
+body {
+    font-family: sans-serif;
+    background: #ff6633;
+    overflow-x: hidden;
+}
+
+
+/* Vakinha Motion */
+
+.vakinha-motion-top {
+    animation-name: moveBox;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+}
+
+@keyframes moveBox {
+    0% {
+        transform: translateY(-500px) rotate(-40deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    animate__fadeIn {
+        animation-name: fadeIn;
+    }
+}
+
+.vakinha-motion-bottom {
+    animation-name: moveBox1;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+}
+
+@keyframes moveBox1 {
+    0% {
+        transform: translateY(500px) rotate(-40deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    animate__fadeIn {
+        animation-name: fadeIn;
+    }
+}
+
+/* Vakinha Layout */
+
+.vakinha {
+    position: absolute;
+    z-index: 1000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.overlay-vakinha {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.vakinha img {
+    height: 50vh;
+    margin-bottom: 20px;
+    border-radius: 24px;
+}
+
+.fechar-vakinha {
+    cursor: pointer;
+    color: white;
+    margin: 12px;
+}
+
+.fechar-vakinha p {
+    padding: 12px;
+}
+
+/* Vakinha Fixed*/
+
+.vakinha-fixed {
+    position: fixed;
+    left: 24px;
+    bottom: 24px;
+    z-index: 1000;
+    text-align: center;
+}
+
+.vakinha-fixed img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+
+/* Botão */
+
+.front {
+    will-change: transform;
+    transition: transform 250ms;
+    display: block;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-size: 24px;
+    background: #84f2d6;
+    border: solid 2px #262525;
+    color: #262525;
+    transform: translateY(-4px);
+}
+
+.pushable:hover .front {
+    transform: translateY(-8px);
+}
+
+.pushable:active .front {
+    transform: translateY(-2px);
+}
+
+.pushable {
+    background: #262525;
+    border: none;
+    border-radius: 50px;
+    padding: 0;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.pushable:focus:not(:focus-visible) {
+    outline: none;
+}
+
+.front-small {
+    will-change: transform;
+    transition: transform 250ms;
+    display: block;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-size: 16px;
+    background: #84f2d6;
+    border: solid 2px #262525;
+    color: #262525;
+    transform: translateY(-4px);
+}
+
+.pushable:hover .front-small {
+    transform: translateY(-8px);
+}
+
+.pushable:active .front-small {
+    transform: translateY(-2px);
+}
+
+.pushable {
+    background: #262525;
+    border: none;
+    border-radius: 50px;
+    padding: 0;
+    cursor: pointer;
+    white-space: nowrap;
+}

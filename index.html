@@ -1,0 +1,54 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>SOS Enchentes</title>
+</head>
+
+<body>
+
+    <div class="vakinha-fixed">
+        <img class="vakinha-motion-bottom" src="img/vakinha-enchentes-fixed.png" alt="Vaquinhas Enchentes">
+        <div class="vakinha-motion-bottom">
+            <a target="_blank" alt="Acesse o Vakinha"
+                href="https://www.vakinha.com.br/vaquinha/a-maior-campanha-solidaria-do-rs">
+                <button class="pushable">
+                    <span class="front-small">
+                        Acesse aqui
+                    </span>
+                </button>
+            </a>
+        </div>
+    </div>
+
+    <div class="overlay-vakinha">
+        <div class="vakinha">
+            <img class="vakinha-motion-top" src="img/vakinha-enchentes.png" alt="Vaquinhas Enchentes">
+            <div class="vakinha-motion-bottom">
+                <a target="_blank" alt="Acesse o Vakinha"
+                    href="https://www.vakinha.com.br/vaquinha/a-maior-campanha-solidaria-do-rs">
+                    <button class="pushable">
+                        <span class="front">
+                            Acesse aqui a Vakinha
+                        </span>
+                    </button>
+                </a>
+            </div>
+            <div class="fechar-vakinha vakinha-motion-bottom">
+                <p onclick="fecharOverlay()">Fechar</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function fecharOverlay() {
+            var overlay = document.querySelector('.overlay-vakinha');
+            overlay.style.display = 'none';
+        }
+    </script>
+
+</body>
+
+</html>
