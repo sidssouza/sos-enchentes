@@ -1,23 +1,22 @@
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>SOS Enchentes</title>
 </head>
 
 <body>
-
     <div class="vakinha-fixed">
-        <img class="vakinha-motion-bottom" src="img/vakinha-enchentes-fixed.png" alt="Vaquinhas Enchentes">
+        <img id="vakinha-fixed-img" class="vakinha-motion-bottom" src="img/vakinha-enchentes-fixed.png"
+            alt="Vaquinhas Enchentes" />
         <div class="vakinha-motion-bottom">
-            <a target="_blank" alt="Acesse o Vakinha"
-                href="https://www.vakinha.com.br/vaquinha/a-maior-campanha-solidaria-do-rs">
-                <button class="pushable">
-                    <span class="front-small">
-                        Acesse aqui
-                    </span>
+            <a href="https://www.vakinha.com.br/vaquinha/a-maior-campanha-solidaria-do-rs" target="_blank"
+                rel="noopener noreferrer" aria-label="Acesse a página de doação Vakinha">
+                <button class="pushable" aria-label="Clique para acessar a campanha solidária">
+                    <span class="front-small">Acesse aqui</span>
                 </button>
             </a>
         </div>
@@ -25,30 +24,53 @@
 
     <div class="overlay-vakinha">
         <div class="vakinha">
-            <img class="vakinha-motion-top" src="img/vakinha-enchentes.png" alt="Vaquinhas Enchentes">
+            <img id="vakinha-overlay-img" class="vakinha-motion-top" src="img/vakinha-enchentes.png"
+                alt="Vaquinhas Enchentes" />
             <div class="vakinha-motion-bottom">
-                <a target="_blank" alt="Acesse o Vakinha"
-                    href="https://www.vakinha.com.br/vaquinha/a-maior-campanha-solidaria-do-rs">
-                    <button class="pushable">
-                        <span class="front">
-                            Acesse aqui a Vakinha
-                        </span>
+                <a href="https://www.vakinha.com.br/vaquinha/a-maior-campanha-solidaria-do-rs" target="_blank"
+                    rel="noopener noreferrer" aria-label="Acesse a página de doação Vakinha">
+                    <button class="pushable" aria-label="Clique para acessar a campanha solidária">
+                        <span class="front">Acesse aqui a Vakinha</span>
                     </button>
                 </a>
             </div>
-            <div class="fechar-vakinha vakinha-motion-bottom" onclick="fecharOverlay()">
-                <img src="https://img.icons8.com/metro/26/close-window.png" alt="Fechar o pop-up" title="Fechar o pop-up" />
+            <div class="fechar-vakinha vakinha-motion-bottom" aria-label="Fechar pop-up" role="button" tabindex="0"
+                onclick="fecharOverlay()">
+                <img src="https://img.icons8.com/metro/26/close-window.png" alt="Fechar o pop-up"
+                    title="Fechar o pop-up" />
             </div>
         </div>
     </div>
 
     <script>
-        function fecharOverlay() {
-            var overlay = document.querySelector('.overlay-vakinha');
-            overlay.style.display = 'none';
-        }
-    </script>
+        var retriggerAnimation = true;
 
+        function updateCursor() {
+            var img = document.getElementById("vakinha-fixed-img");
+            img.style.cursor = retriggerAnimation ? "pointer" : "default";
+        }
+
+        function fecharOverlay() {
+            document.querySelector(".overlay-vakinha").style.display = "none";
+        }
+
+        function toggleAnimation() {
+            if (retriggerAnimation) {
+                document.querySelector(".overlay-vakinha").style.display = "block";
+                var img = document.getElementById("vakinha-overlay-img");
+                img.classList.remove("vakinha-motion-top");
+                void img.offsetWidth;
+                img.classList.add("vakinha-motion-top");
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            updateCursor();
+            document
+                .getElementById("vakinha-fixed-img")
+                .addEventListener("click", toggleAnimation);
+        });
+    </script>
 </body>
 
 </html>
